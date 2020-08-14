@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/tvCode"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_weight="1"
+            android:text="5"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingLeft="16dp"
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_weight="2.5"
+            android:text="Lại Nguyễn Trung Anh Lê Văn kasfhajfadfhaskdhkas"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:paddingLeft="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/tvPopulation"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_weight="1.5"
+            android:text="500000000000"
+            android:textSize="16sp"></TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#111111"></TextView>
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".acitivity.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spPlanet"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </androidx.appcompat.widget.AppCompatSpinner>
+
+    <EditText
+        android:id="@+id/edtCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Code"></EditText>
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"></EditText>
+
+    <EditText
+        android:id="@+id/edtPopulation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Population"></EditText>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="addCountry"
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"></Button>
+
+        <Button
+            android:onClick="addPlanet"
+            android:id="@+id/btnAddPlanet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Planet"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/btnEqualTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="equalTo"
+            android:text="equalTo"
+            android:textSize="11sp"></Button>
+
+        <Button
+            android:id="@+id/btnContains"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="contains"
+            android:text="contains"
+            android:textSize="11sp"></Button>
+
+        <Button
+            android:id="@+id/btnLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="like"
+            android:text="like"
+            android:textSize="11sp"></Button>
+
+        <Button
+            android:id="@+id/btnSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sort"
+            android:text="Sort"
+            android:textSize="11sp"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/Between"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="between"
+            android:text="Between"
+            android:textSize="11sp"></Button>
+
+        <Button
+            android:id="@+id/btnLessThan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="lessThan"
+            android:text="lessThan"
+            android:textSize="11sp"></Button>
+
+        <Button
+            android:id="@+id/btnGreaterThan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="greaterThan"
+            android:text="greaterThan"
+            android:textSize="9sp"></Button>
+
+        <Button
+            android:id="@+id/btnDistinct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="distinct"
+            android:text="distinct"
+            android:textSize="11sp"></Button>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
