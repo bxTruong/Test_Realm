@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_realm.OnItemClick;
 import com.example.test_realm.model.Country;
 import com.example.test_realm.R;
 import com.example.test_realm.realm.RealmCountry;
@@ -23,6 +24,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryHolder> {
     private Context context;
     private RealmCountry realmCountry;
     private AlertDialog alertDialog;
+    private OnItemClick callBack;
 
     public CountryAdapter(List<Country> countryList, Context context) {
         this.countryList = countryList;
@@ -38,7 +40,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CountryHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CountryHolder holder, final int position) {
         final Country country = countryList.get(position);
         realmCountry = new RealmCountry();
         realmCountry.create(context);
@@ -50,7 +52,6 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryHolder> {
             @Override
             public void onClick(View view) {
                 openDialog(country);
-                notifyDataSetChanged();
             }
         });
 
@@ -70,7 +71,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryHolder> {
         return countryList.size();
     }
 
-    public void openDialog( Country country) {
+    public void openDialog(Country country) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         View dialog = LayoutInflater.from(context).inflate(R.layout.dialog, null);
         builder.setTitle("Update");
@@ -98,6 +99,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryHolder> {
                 long population = Long.parseLong(edtPopulation.getText().toString().trim());
                 realmCountry.update(code, name, population);
                 alertDialog.cancel();
+                notifyDataSetChanged();
             }
         });
         builder.create();

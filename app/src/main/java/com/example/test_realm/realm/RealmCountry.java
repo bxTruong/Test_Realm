@@ -33,7 +33,7 @@ public class RealmCountry {
     }
 
     public void update(int code, String name, long population) {
-
+        myRealm.beginTransaction();
         RealmResults<Country> result = myRealm.where(Country.class)
                 .equalTo("code", code)
                 .findAll();
@@ -41,6 +41,8 @@ public class RealmCountry {
             country.setName(name);
             country.setPopulation(population);
         }
+        myRealm.commitTransaction();
+
     }
 
     public void delete(int code) {
@@ -94,23 +96,23 @@ public class RealmCountry {
         return results;
     }
 
-    public List<Country> sort(){
+    public List<Country> sort() {
         // ASC (thấp -> cao)
         RealmResults<Country> result = myRealm.where(Country.class).sort("population").findAll();
         //result = result.sort("age", Sort.DESCENDING); (DES) (cao -> thấp)
         return result;
     }
 
-    public List<Country> between(long population1, long population2){
+    public List<Country> between(long population1, long population2) {
         RealmResults<Country> result = myRealm.where(Country.class)
-                .between("population", population1,population2)
+                .between("population", population1, population2)
                 .findAll();
         return result;
     }
 
-    public List<Country> distinct(){
+    public List<Country> distinct() {
         RealmResults<Country> result = myRealm.where(Country.class).distinct("name").findAll();
-        return  result;
+        return result;
     }
 
 //    protected void readJson() {
